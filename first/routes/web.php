@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Mycontroller;
+use App\Http\Middleware\Testmiddleware;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,5 +39,23 @@ Route::get('/tamrin1', function () {
     return view('tamrin1');
 });
 
-Route::get('/Mycontroller/{id}', [Mycontroller::class,'test'] );
+// Route::get('/Mycontroller/{id}', [Mycontroller::class,'test'] );
+
+Route::controller(MyController::class)->group(function () {
+    Route::get('/Mycontroller/{id}', 'test');
+    Route::get('/Mycontroller', 'test2');
+    Route::get('/Mycontroller/test3', 'test3');
+});
+
+Route::get('/copy', function () {
+    return view('copy');
+});
+Route::get('/test', function () {
+    return view('test');
+})->middleware('Testmiddleware');
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 ?>
