@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('todo', function (Blueprint $table) {
-            //
+        Schema::create('todos', function (Blueprint $table) {
+            $table->id();
             $table->string('name');
-            // $table->string('token', 64)->unique();
             $table->integer('age');
             $table->text('abilities')->nullable();
         });
@@ -29,8 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('_todo', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('todos');
     }
 };

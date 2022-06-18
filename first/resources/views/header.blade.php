@@ -83,7 +83,7 @@
                     <li class="navbar-left">
                         <input type="text" class="search-input" placeholder="جستجو...">
                         <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
-                        <img src="{{asset('spf.jpg')}}"  height="100" width="100">
+                        <!-- <img src="{{asset('spf.jpg')}}"  height="100" width="100"> -->
                     </li>
                 </ul>
 

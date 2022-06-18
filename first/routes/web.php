@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Mycontroller;
-use App\Http\Controllers\Todocontroller;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\TodoController;
 use App\Http\Controllers\TestController\q1;
 
 use App\Http\Middleware\Testmiddleware;
@@ -28,12 +28,16 @@ Route::get('/hello', function () {
     return view('hello');
 });
 Route::get('/name', function () {
-    return view('name',['name'=>'ali',
-'code'=>'123']);
+    return view('name', [
+        'name' => 'ali',
+        'code' => '123'
+    ]);
 });
 Route::get('/checkif', function () {
-    return view('checkif',['name'=>'ali',
-'code'=>'123']);
+    return view('checkif', [
+        'name' => 'ali',
+        'code' => '123'
+    ]);
 });
 Route::get('/layout', function () {
     return view('layout');
@@ -44,10 +48,16 @@ Route::get('/tamrin1', function () {
 });
 
 // Route::get('/Mycontroller/{id}', [Mycontroller::class,'test'] );
-  Route::get('/testcontroller/{id}', [TestController::class,'q1'] );
-  
-  Route::get('/testcontroller', [TestController::class,'q'] );
- Route::get('/TodoController', [TodoController::class,'q1'] );
+//   Route::get('/testcontroller/{id}', [TestController::class,'q1'] );
+//   Route::get('/delcontroller/{id}', [TestController::class,'q2'] );
+Route::get('/delcontroller/{todo}', [TestController::class, 'q3']);
+
+Route::get('/testcontroller', [TestController::class, 'q']);
+
+Route::get('/todo/list', [TodoController::class, 'list'])->name('list');;
+Route::get('/todo/show/{id}', [TodoController::class, 'show']);
+// Route::get('/todo/{id}/delete', [TodoController::class, 'delete']);
+Route::get('/todo/{todo}/delete', [TodoController::class, 'del']);
 
 Route::controller(MyController::class)->group(function () {
     Route::get('/Mycontroller/{id}', 'test');
@@ -66,4 +76,3 @@ Route::get('/test', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-?>

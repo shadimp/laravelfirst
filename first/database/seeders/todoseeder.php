@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class todoseeder extends Seeder
+class Todoseeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,22 +16,28 @@ class todoseeder extends Seeder
     public function run()
     {
         //
-        DB::table("todo")->insert([
-            // [
-            //     "id" => 1,
-            //     "name" => 'shadi',
-            //     "abilities" => 'today',
-            //     "age" => 36
-            // ],
-            // [
-            //     "id" => 2,
-            //     "name" => 'reza',
-            //     "abilities" => 'writting',
-            //     "age" => 37
-            // ],
+        DB::table("Todos")->insert([
+            [
+                "id" => 1,
+                "name" => 'shadi',
+                "abilities" => 'today',
+                "age" => 36
+            ],
+            [
+                "id" => 2,
+                "name" => 'reza',
+                "abilities" => 'writting',
+                "age" => 37
+            ],
             [
                 "id" => 4,
                 "name" => 'nila',
+                "abilities" => 'cute',
+                "age" =>4
+            ],
+            [
+                "id" => 3,
+                "name" => 'Mehrsa',
                 "abilities" => 'hair',
                 "age" =>8
             ],

@@ -32,6 +32,12 @@ class testseeder extends Seeder
             [
                 "id" => 4,
                 "name" => 'nila',
+                "abilities" => 'cute',
+                "age" =>4
+            ],
+            [
+                "id" => 3,
+                "name" => 'Mehrsa',
                 "abilities" => 'hair',
                 "age" =>8
             ],
