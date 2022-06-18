@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Mycontroller;
+use App\Http\Controllers\Todocontroller;
+use App\Http\Controllers\TestController;
+use App\Http\Controllers\TestController\q1;
+
 use App\Http\Middleware\Testmiddleware;
 use Illuminate\Support\Facades\Auth;
 
@@ -40,6 +44,10 @@ Route::get('/tamrin1', function () {
 });
 
 // Route::get('/Mycontroller/{id}', [Mycontroller::class,'test'] );
+  Route::get('/testcontroller/{id}', [TestController::class,'q1'] );
+  
+  Route::get('/testcontroller', [TestController::class,'q'] );
+ Route::get('/TodoController', [TodoController::class,'q1'] );
 
 Route::controller(MyController::class)->group(function () {
     Route::get('/Mycontroller/{id}', 'test');
