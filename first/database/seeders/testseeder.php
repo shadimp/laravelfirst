@@ -21,7 +21,9 @@ class testseeder extends Seeder
                 "id" => 1,
                 "name" => 'shadi',
                 "abilities" => 'today',
-                "age" => 36
+                "age" => 36,
+                "created_at"=>timestamp(),
+                "updated_at"=>timestamp()
             ],
             [
                 "id" => 2,

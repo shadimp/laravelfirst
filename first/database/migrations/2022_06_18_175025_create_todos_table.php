@@ -18,6 +18,9 @@ return new class extends Migration
             $table->string('name');
             $table->integer('age');
             $table->text('abilities')->nullable();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+            
         });
     }
 
