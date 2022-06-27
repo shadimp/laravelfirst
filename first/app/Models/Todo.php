@@ -12,9 +12,5 @@ class Todo extends Model
     {
         return self::query()->where('id', $id)->first();
     }
-//  public function static getByID($id )
-//     {
-//         return self::query()->where('id', $id)->first();
-//     }
-
+    protected $fillable = ['name'];
 }

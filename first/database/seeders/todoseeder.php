@@ -41,6 +41,12 @@ class Todoseeder extends Seeder
                 "abilities" => 'hair',
                 "age" =>8
             ],
+            [
+                "id" => 8,
+                "name" => 'Mehrsa',
+                "abilities" => 'blabla',
+                "age" =>7,
+            ],
         ]);
     }
 }

@@ -25,8 +25,8 @@ class TodoupdateRequest extends FormRequest
     public function rules()
     {
         return [
-
-        'id' => 'required|unique:todos|max:2,unique'        
+        'id' => 'required|max:2' , 
+        'name' => ["required", "string", "min:1", "max:25"],      
         ];
     }
 }

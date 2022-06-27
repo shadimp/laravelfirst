@@ -5,8 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
-{
-    /**
+{    /**
      * Run the migrations.
      *
      * @return void
@@ -20,6 +19,7 @@ return new class extends Migration
             $table->text('abilities')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+            $table->timestamp('deleted_at')->useCurrent();
             
         });
     }

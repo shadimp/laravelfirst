@@ -12,24 +12,23 @@ class TodoController extends Controller
     //
     public function list()
     {
-        $s = Todo::query()->where('id', '>', 2)->get()->all();
-        // query()->get()->all();
+        // $s=Todo::updateorcreate(['name'=>'mms'],['name'=>'mohamadreza']);
+        // $s = Todo::query()->where('id', '>', 2)->get()->tosql();
+        // $s = Todo::query()->where('id')->get()->all();
+        $s = Todo:: query()->get()->all();
         // dd($s);
         return view('/todo/todolist', ['Todo' => $s]);
     }
     public function show($id)
     {
-         $s = Todo::getByID($id);
-        // $s = Todo::query()->where('id', '>', 2)->first();
-        //dd($s);
+        $s = Todo::getByID($id);    
         return view('/todo/todoshow', ['Todo' => $s]);
     }
     public function delete($id)
     {
         $s = Todo::query()->find($id);
         $s->delete();
-        //dd($s);
-        //    return view('testquery',['Test'=>$s]);
+        
     }
     public function del(Todo  $todo)
     {
@@ -38,7 +37,6 @@ class TodoController extends Controller
     }
     public function store(Request $request)
     {
-
         $todo = new Todo;
         $todo->id = $request->id;
         $todo->name = $request->name;
@@ -48,10 +46,9 @@ class TodoController extends Controller
         if ($todo->save()) {
             return redirect()->route('list');
         }
-
         return; // 422
-
     }
+    
     public function update(TodoupdateRequest $request)
     {
         $todo = Todo::query()->where('id', $request->id)->first();

@@ -6,9 +6,9 @@
 </head>
 
 <body>
+
     <?php
-
-
+    echo __('messages.greeting');
     ?>
 
     <!-- ['todo'=>$todo] add as parameter -->
